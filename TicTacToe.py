@@ -1,6 +1,5 @@
 import random, os
 
-
 winning_combos = [
     [(0, 0), (0, 1), (0, 2)],
     [(1, 0), (1, 1), (1, 2)],
@@ -11,7 +10,6 @@ winning_combos = [
     [(0, 0), (1, 1), (2, 2)],
     [(0, 2), (1, 1), (2, 0)]
 ]
-
 
 def check_winner(board):
 
@@ -28,13 +26,7 @@ def computer():
     computer_column = random.randint(0,2);computer_columns.append(computer_column)
     return computer_row, computer_column
 
-computer_rows = []
-computer_columns = []
-
-matrix1 = [' ' for i in range(3)]
-matrix2 = [' ' for i in range(3)]
-matrix3 = [' ' for i in range(3)]
-all = [matrix1, matrix2, matrix3]
+all = [[' ' for i in range(3)] for i in range(3)]
 
 u_shape = input("Which one do you want? ['X' or 'O']? ").upper()
 if u_shape == 'X':
@@ -47,8 +39,8 @@ while True:
     for row in all:
         print(row) 
 
-    computer_row = random.randint(0,2);computer_rows.append(computer_row)
-    computer_column = random.randint(0,2);computer_columns.append(computer_column)
+    computer_row = random.randint(0,2)
+    computer_column = random.randint(0,2)
 
     user_row = int(input("Enter the row[1,2,3]: "))
     user_column = int(input("Enter the column[1,2,3]: "))
